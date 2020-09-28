@@ -12,7 +12,7 @@ let sumAges = null;
 let avgAges = null;
 
 
-// iniciando a criação de funções e criação de elementos Dom
+// Iniciando a criação de funções e criação de elementos Dom
 
 window.addEventListener('load', () => {
   btnSearch = document.querySelector("#btnSearch");
@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
   fetchPeople();
 });
 
-// Função que é responsável pelo recebimento dos dados findos da API. API => ARRAY
+// Função que é responsável pelo recebimento dos dados vindos da API. API => ARRAY
 async function fetchPeople() {
   const res = await fetch("https://randomuser.me/api/?seed=javascript&results=100&nat=BR&noinfo");
   const json = await res.json();
@@ -50,7 +50,7 @@ function render() {
 }
 
 function renderStatistics() {
-  // Calculando quantas pessoas são do sexo Masculino
+  // Calculando quantas pessoas são do sexo masculino
   totalGenderM = filtredPeople.reduce((acumulator, current) => {
     if (current.gender === "male") {
       acumulator++;
@@ -58,7 +58,7 @@ function renderStatistics() {
     return acumulator;
   }, 0)
 
-  // Calculando quantas pessoas são do sexo Feminino
+  // Calculando quantas pessoas são do sexo feminino
   totalGenderF = filtredPeople.reduce((acumulator, current) => {
     if (current.gender === "female") {
       acumulator++;
@@ -106,7 +106,7 @@ function renderFilteredPeople() {
   elFilteredPeople.innerHTML = peopleHTML;
 }
 
-// Adicionando eventos.
+// Adicionando eventos ao input e ao botão
 function AddEvent() {
   btnSearch.addEventListener('click', (e) => {
     filterPeople(txtName.value);
