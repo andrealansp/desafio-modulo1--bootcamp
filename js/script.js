@@ -11,6 +11,9 @@ let totalGenderF = null;
 let sumAges = null;
 let avgAges = null;
 
+
+// iniciando a criação de funções e criação de elementos Dom
+
 window.addEventListener('load', () => {
   btnSearch = document.querySelector("#btnSearch");
   elFilteredPeople = document.querySelector("#peoples");
@@ -20,6 +23,7 @@ window.addEventListener('load', () => {
   fetchPeople();
 });
 
+// Função que é responsável pelo recebimento dos dados findos da API. API => ARRAY
 async function fetchPeople() {
   const res = await fetch("https://randomuser.me/api/?seed=javascript&results=100&nat=BR&noinfo");
   const json = await res.json();
@@ -39,6 +43,7 @@ async function fetchPeople() {
   });
 };
 
+//Funcão que faz a renderização dos elementos na TELA.
 function render() {
   renderFilteredPeople();
   renderStatistics();
@@ -101,7 +106,7 @@ function renderFilteredPeople() {
   elFilteredPeople.innerHTML = peopleHTML;
 }
 
-
+// Adicionando eventos.
 function AddEvent() {
   btnSearch.addEventListener('click', (e) => {
     filterPeople(txtName.value);
@@ -115,6 +120,7 @@ function AddEvent() {
   })
 }
 
+// Filtrando os dados e ordenando
 function filterPeople(text) {
   filtredPeople = people.filter((person => person.name.includes(text))).sort((a, b) => {
     return a.name.localeCompare(b.name);
