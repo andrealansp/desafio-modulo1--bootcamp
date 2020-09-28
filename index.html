@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtro de Usuários</title>
+</head>
+
+<body>
+  <div class="row ">
+    <div class="col s12 center-align">
+      <h3>Search for Names</h3>
+    </div>
+    <form class="col s6 offset-s3">
+      <div class="row">
+        <div class="input-field col s10">
+          <input placeholder="Search for names" id="search" type="text" class="validate">
+          <label for="search">Search</label>
+        </div>
+        <a class="waves-effect waves-light btn col s2" id='btnSearch'>Search</a>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col s3 offset-s3">
+      <div class="container-people" id='peoples'>
+        <h4>No Filtered Users</h4>
+      </div>
+    </div>
+    <div class="col s3">
+      <div class="container-people" id="statistics">
+        <h4>Statistics</h4>
+      </div>
+    </div>
+  </div>
+  <script src="./js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
